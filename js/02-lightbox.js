@@ -4,16 +4,16 @@ function createGalleryCard(items) {
   return items
     .map(({ preview, original, description }) => {
       return `
-            <li class="gallery__item simple-lightbox">
-  <a class="gallery__link" href="${original}">
-    <img
-      class="gallery__image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
-    />
-  </a>
-    </li>`;
+        <li class="gallery__item simple-lightbox">
+          <a class="gallery__link" href="${original}">
+            <img
+              class="gallery__image"
+              src="${preview}"
+              data-source="${original}"
+              alt="${description}"
+            />
+          </a>
+        </li>`;
     })
     .join("");
 }
@@ -40,5 +40,7 @@ function onGalleryItemClick(event) {
     history: false,
     fadeSpeed: 100,
     disableScroll: false,
+    captionsData: "alt",
+    captionDelay: 250,
   });
 }
